@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<template>
+    <t t-name="pos_custom_navbar">
+        <button class="btn btn-primary" t-on-click="onClickButton">
+            <i class="fa fa-bell"></i> Custom
+        </button>
+    </t>
+</template>

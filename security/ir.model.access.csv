@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_sale_form_wizard,sale.form.wizard,model_sale_form_wizard,,1,1,1,1
+access_invoice_product_wizard,invoice.product.wizard,model_invoice_product_wizard,,1,1,1,1
+access_invoice_product_wizard_line,invoice.product.wizard.line,model_invoice_product_wizard_line,,1,1,1,1

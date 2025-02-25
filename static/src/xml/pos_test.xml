@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<template>
+
+    <t t-name="TestButton" owl="1">
+        <div class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="resetValue">
+            <i class="fa fa-refresh" role="img" aria-label="Test Inherit" />
+            <span> </span>
+            <span>Reset Value!</span>
+        </div>
+        <div class="control-button btn btn-light rounded-0 fw-bolder">
+            <span role="button">Value: <t t-esc="state.value"/></span>
+        </div>
+        <div class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="incrementValue">
+            <i class="fa fa-plus" role="img" aria-label="Test Inherit" />
+            <span> </span>
+            <span>Increment</span>
+        </div>
+    </t>
+
+</template>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <record id="edit_so_wizard" model="res.groups">
+        <field name="name">SO Wizard</field>
+    </record>
+
+</odoo>

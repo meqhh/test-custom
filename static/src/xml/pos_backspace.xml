@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name="Numpad">
+        <div class="numpad">
+            <!-- Tombol Backspace hanya muncul jika is_backspace aktif -->
+            <t t-if="isBackspaceVisible">
+                <button class="input-button numpad-backspace"
+                        t-on-click="() => this.sendInput('Backspace')">
+                    <img />
+                </button>
+            </t>
+        </div>
+    </t>
+</templates>
