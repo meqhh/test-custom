@@ -16,6 +16,7 @@
     'data': [
         # data
         "data/menu.xml",
+        "data/ir_sequence_data.xml",
         
         # security
         "security/ir.model.access.csv",
