@@ -29,6 +29,6 @@ class SaleOrder(models.Model):
             'view_id': view_id,
             'target': 'new',
             'context': {
-
+                    'default_sale_order_id': self.id
                 },
         }

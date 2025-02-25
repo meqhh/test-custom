@@ -17,6 +17,7 @@ class InvoiceProductWizard(models.TransientModel):
             for line in rec.invoice_ids:
                 self.env['sale.order.line'].create({
                     'order_id': rec.sale_order_id.id,
+                    'product_id': line.product_id.product_variant_id.id,
                     'product_template_id': line.product_id.id,
                     'name': line.product_id.name,
                     'product_uom_qty': 1.0,
