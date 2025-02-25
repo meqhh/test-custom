@@ -39,7 +39,7 @@ class SaleOrder(models.Model):
     
     @api.model
     def create(self, vals):
-        if vals.get('name', 'New') == 'new':
+        if vals.get('name', 'New') == 'New':
             print(12121212121212121212)
-            vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or 'New'
+            vals['name'] = self.env['ir.sequence'].next_by_code('custom.sale.order') or 'New'
         return super(SaleOrder, self).create(vals)
