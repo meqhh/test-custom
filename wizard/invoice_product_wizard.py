@@ -8,7 +8,7 @@ class InvoiceProductWizard(models.TransientModel):
         ('service', 'Service'),
         ('product', 'Storeable Product'),
         ('combo', 'Combo')
-    ], string='Product Category', default="consu")
+    ], string='Product Category', default="consu", required=True)
     invoice_ids = fields.One2many('invoice.product.wizard.line', 'invoice_id', String="Invoice")
     sale_order_id = fields.Many2one('sale.order', string='Sale Order')
     
