@@ -24,7 +24,15 @@ class InvoiceProductWizard(models.TransientModel):
                     'product_uom': line.product_id.uom_id.id,
                     'price_unit': line.product_id.list_price,
                 })
-
+    
+    @api.onchange('category')
+    def _onchange_category(self):
+        for rec in self:
+            if rec.category:
+                products = self.env['product.template'].search([('detailed_type', '=', rec.category)])
+                rec.invoice_ids = [(5, 0, 0)]
+                invoice_lines = [(0, 0,  {'product_id': product.id}) for product in products]
+                rec.invoice_ids = invoice_lines
 
 class InvoiceProductWizardLine(models.TransientModel):
     _name = 'invoice.product.wizard.line'
