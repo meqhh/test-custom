@@ -11,6 +11,7 @@ class InvoiceProductWizard(models.TransientModel):
     ], string='Product Category', default="consu", required=True)
     invoice_ids = fields.One2many('invoice.product.wizard.line', 'invoice_id', String="Invoice")
     sale_order_id = fields.Many2one('sale.order', string='Sale Order')
+    pos_category_ids = fields.Many2many('pos.category', string='Category in POS')
     
     def action_import(self):
         for rec in self:
@@ -25,14 +26,16 @@ class InvoiceProductWizard(models.TransientModel):
                     'price_unit': line.product_id.list_price,
                 })
     
-    @api.onchange('category')
+    @api.onchange('category', 'pos_category_ids')
     def _onchange_category(self):
         for rec in self:
-            if rec.category:
-                products = self.env['product.template'].search([('detailed_type', '=', rec.category)])
+            if rec.category and rec.pos_category_ids:
+                products = self.env['product.template'].search([('detailed_type', '=', rec.category), ('pos_categ_ids', 'in', rec.pos_category_ids.ids)])
                 rec.invoice_ids = [(5, 0, 0)]
                 invoice_lines = [(0, 0,  {'product_id': product.id}) for product in products]
                 rec.invoice_ids = invoice_lines
+            if not rec.category and rec.pos_category_ids or rec.category and not rec.pos_category_ids:
+                rec.invoice_ids = [(5, 0, 0)]
 
 class InvoiceProductWizardLine(models.TransientModel):
     _name = 'invoice.product.wizard.line'
