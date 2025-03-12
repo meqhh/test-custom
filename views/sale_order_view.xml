@@ -8,7 +8,8 @@
             <field name="arch" type="xml">
                 <xpath expr="(//header/button[@name='action_quotation_send'])[1]" position='after'>
                     <field name="is_action_clear_hide" invisible="1"/>
-                    <button name="action_clear_line" type="object" class="btn-primary" string="Clear Lines" data-hotkey="d" invisible="is_action_clear_hide == True"/>
+                    <button name="action_clear_line" type="object" class="btn-primary" string="Clear Lines" data-hotkey="d" invisible="is_action_clear_hide == True"
+                    confirm="Are you sure you want to clear all lines?"/>
                 </xpath>
             </field>
         </record>
