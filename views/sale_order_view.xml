@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- <record id="sale_order_tree_inherit" model="ir.ui.view">
-            <field name="name">sale.order.inherit</field>
+        <record id="custome_view_order_form_inherit" model="ir.ui.view">
+            <field name="name">custom.view.order.form.inherit</field>
             <field name="model">sale.order</field>
-            <field name="inherit_id" ref="sale.sale_order_tree"/>
+            <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//tree" position="attributes">
-                    <attribute name="js_class">owl_list_controller</attribute>
+                <xpath expr="(//header/button[@name='action_quotation_send'])[1]" position='after'>
+                    <field name="is_action_clear_hide" invisible="1"/>
+                    <button name="action_clear_line" type="object" class="btn-primary" string="Clear Lines" data-hotkey="d" invisible="is_action_clear_hide == True"/>
                 </xpath>
             </field>
-        </record> -->
-        
-        <record id="receipt_inherit" model="ir.ui.view">
+        </record>
+        <!-- <record id="receipt_inherit" model="ir.ui.view">
             <field name="name">receipt.inherit</field>
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.vpicktree"/>
@@ -21,6 +21,7 @@
                     <attribute name="js_class">test_list_controller</attribute>
                 </xpath>
             </field>
-        </record>
+        </record> -->
+        
     </data>
 </odoo>
