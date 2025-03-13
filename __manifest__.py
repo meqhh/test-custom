@@ -10,7 +10,10 @@
     'website': 'https://www.sgeede.com',
     'depends': [
         'point_of_sale',
-        'web'
+        'web',
+        'base',
+        'web_enterprise',
+        'stock_barcode'
     ],
     'license': 'LGPL-3',
     'data': [
