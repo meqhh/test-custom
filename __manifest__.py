@@ -28,6 +28,7 @@
         # views
         "views/pos_config_view.xml",
         "views/sale_order_view.xml",
+        "views/ir_model_view.xml",
         
         # wizard
         "wizard/sale_form_wizaard.xml",
